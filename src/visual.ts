@@ -34,9 +34,10 @@ export class Visual implements IVisual {
     public update(options: VisualUpdateOptions) {
         this.findColumns(options.dataViews[0].metadata.columns);
             let rows = options.dataViews[0].table.rows;
+            let columns = options.dataViews[0].table.columns;
 
             let table = "<table> <thead>";
-            table += "<tr> <th>Column One</th> <th>Column Two</th> <th>Column Three</th> <th>Column Four</th> </tr>";
+            table += `<tr> <th>${columns[0].displayName}</th> <th>${columns[1].displayName}</th> <th>${columns[2].displayName}</th> <th>${columns[3].displayName}</th> </tr>`;
             table += "</thead> <tbody>";
             for (let i = 0; i < rows.length; i++) {
                 let row = rows[i];
